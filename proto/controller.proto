@@ -1,0 +1,31 @@
+syntax = "proto3";
+
+option go_package = "pb;pb";
+
+service UserService{
+    rpc Post(PostRequest) returns (PostResponse){}
+    rpc Delete(DeleteRequest) returns (DeleteResponse){}
+    rpc Get(GetRequest) returns (GetResponse){}
+}
+
+message PostRequest {
+    string user = 1;
+}
+
+message PostResponse{
+    string message = 1;
+}
+
+message DeleteRequest {
+    string user = 1;
+}
+
+message DeleteResponse{
+    string message = 1;
+}
+
+message GetRequest{}
+
+message GetResponse{
+    repeated string user = 1;
+}
